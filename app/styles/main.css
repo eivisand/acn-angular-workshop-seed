@@ -1,1 +1,133 @@
 /** Your custom styles go here **/
+
+/**textstuff**/
+.colorGreen{
+    color : #12bb99;
+}
+
+.colorRed{
+    color: #dd2255;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+.center {
+    text-align: center;
+}
+
+
+/**textstuff end**/
+
+/** top filter bar**/
+.topFilter {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.input-group .glyphicon{
+    top: 0px;
+}
+/**top filter bar end**/
+/**main grid**/
+#mediaplayersContainer {
+    max-width: 960px;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px ;
+}
+.mediaPlayerHolder {
+width: 232px;
+height: 200px;
+margin: 4px;
+float: left;
+background-color: #f6f6f6;
+border: 1px solid;
+border-color: #bbb;
+position: relative;
+    }
+.mediaPlayerHolder:hover{
+background-color: #fafafa;
+box-shadow: 0px 1px 6px rgba(200, 200, 200, 0.15);
+border-color: #fafafa;
+
+
+    }
+
+body{
+    background-color: #f6f6f6;
+}
+.bottomContainer{
+    padding: 4px;
+   margin-top: 1%;
+    width: 100%;
+    float: left;
+}
+
+#showNewButton {
+    width : 100%
+}
+.oneOfTwo{
+    width: 50%;
+    float: left;
+    border: 1px solid #cccccc;
+
+}
+
+.footerIcon {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.buttonStuff {
+    cursor: pointer;
+}
+.buttonStuff:hover{
+    color: #7a62d3;
+    text-decoration: none;
+}
+.updateLabel {
+    width: 82px;
+}
+.newLabel {
+    min-width: 82px;
+}
+.input-group-button {
+    line-height: 1;
+    padding: 0;
+}
+footer {
+    text-align: center;
+}
+.bottomRight {
+    position: absolute;
+    bottom: 5px;
+    left: 4px;
+    width: 48%;
+    border: 1px solid #cccccc;
+}
+/** Mediaqueries**/
+@media (max-width: 1200px) {
+    #mediaplayersContainer {
+
+        max-width: 720px;
+
+    }
+}
+@media (max-width: 770px) {
+    #mediaplayersContainer {
+
+        max-width: 481px;
+
+    }
+}
+@media (max-width: 530px) {
+    #mediaplayersContainer {
+
+        max-width: 240px;
+
+    }
+    .buttonStuff {
+        display: none;
+    }
+}

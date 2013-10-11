@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div class="container" id="mediaplayersContainer" ><h1 class="center">Mediaplayaz</h1>
+    <hr>
+
+
+
+        <div class="input-group topFilter">
+            <span class="input-group-addon glyphicon glyphicon-filter" ></span>
+        <input type="text" ng-model="search.name" class="form-control">
+            <span class="input-group-addon buttonStuff" ng-click="showHideActive()" ng-hide="$screenWidth" >{{showActiveButtonText}}</span>
+            </div>
+        <div class="thumbnail mediaPlayerHolder" ng-repeat="item in mediaplayers | filter:search | filter:filterActive"{{item}}>
+         <div class="unexpanded" ng-hide="isSelected(item._id)">
+            <h2>{{item.name}}</h2>
+        <br>
+        <button ng-click="delete(item._id)"  id="deleteButton" class="btn oneOfTwo">Delete</button>
+        <button ng-click="expand(item._id)"  id="expandButton" class="btn oneOfTwo">Expand</button>
+             <br>
+        <button ng-click="activate(item, true)"  id="activateButton" class="btn bottomRight" ng-hide="item.isActive">Activate</button>
+        <button ng-click="activate(item, false)"  id="deActivateButton" class="btn bottomRight" ng-show="item.isActive">Deactivate</button>
+        <div class="footerIcon">
+            <span class="glyphicon glyphicon-ok-sign colorGreen" ng-show="item.isActive"></span>
+            <span class="glyphicon glyphicon-minus-sign colorRed" ng-hide="item.isActive"></span>
+        </div>
+        </div>
+        <div id="{{item._id}}Expand" class="expandableBox" ng-show="isSelected(item._id)" >
+            <div class="input-group">
+                <span class="input-group-addon updateLabel">Name</span>
+                <input type="text"  ng-model="item.name" class="form-control">
+            </div>
+             <div class="input-group">
+                <span class="input-group-addon updateLabel">Ip</span>
+                <input type="text"  ng-model="item.ip" class="form-control">
+             </div>
+            <div class="input-group">
+                <span class="input-group-addon updateLabel">Floor</span>
+                <input type="text"  ng-model="item.location.floor" class="form-control">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon updateLabel">Location</span>
+                <input type="text"  ng-model="item.location.zone" class="form-control">
+            </div>
+            <button ng-click="update(item)"  id="updateButton" class="btn oneOfTwo">update</button>
+            <button ng-click="collapse(item)"  id="collapseButton" class="btn oneOfTwo">Collapse</button>
+        </div>
+
+
+    </div>
+
+
+
+
+
+        <div class="bottomContainer">
+            <button ng-click="showNew(true)"  id="showNewButton" class="btn" ng-hide="showNewSheet">New</button>
+            <div id="newSheet" class="expandableBox" ng-show="showNewSheet" ng-model="newPlayerTemplate">
+                <div class="center colorRed" ng-show="showFeedBack">No go: <br>{{feedback}}</div>
+                <div class="input-group">
+                    <span class="input-group-addon newLabel">Name</span>
+
+                   <input type="text" id="nameField" ng-model="newPlayerTemplate.name" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon newLabel">Ip</span>
+                    <input type="text" id="ipField" ng-model="newPlayerTemplate.ip" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon newLabel">Floor</span>
+                    <input type="text" id="floorField" ng-model="newPlayerTemplate.location.floor" class="form-control" >
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon newLabel">Location</span>
+                    <input type="text" id="zoneField" ng-model="newPlayerTemplate.location.zone" class="form-control">
+                </div>
+                <br/>
+                    <button ng-click="newPlayer(newPlayerTemplate)"   id="newButton" class="btn oneOfTwo">Create New Mediaplayer</button>
+                    <button ng-click="showNew(false)"  id="abortNewButton" class="btn oneOfTwo">Abort</button>
+
+            </div>
+        </div>
+
+    <footer>EivindCorp Design</footer>
+</div>
+
+
+
+
+
+</body>
+</html>

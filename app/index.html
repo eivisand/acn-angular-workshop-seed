@@ -12,7 +12,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
 	<!-- Vendor styles goes here -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/bootstrap-theme-white-plum/dist/css/bootstrap.css">
 	<!-- End vendor styles -->
 	
 	<!-- build:css(.tmp) styles/main.css -->
@@ -27,10 +27,32 @@
     <!--[if lt IE 9]>
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
+      <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <![endif]-->
 
     <!-- Add your global site header here -->
-	
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+            <a class="navbar-brand roll" href="#"><span data-title="AAFW">AAFW</span></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".header-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse header-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/#/mediaplayer" class="roll"><span data-title="Nav Item 1">Nav Item 1</span></a>
+                </li>
+                <li>
+                    <a href="#" class="roll"><span data-title="Nav Item 2">Nav Item 2</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 	<div class="container">
 		<!-- Add your application content here -->
 		<div id=appContainer" ng-view></div>
@@ -66,6 +88,8 @@
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.js"></script>
 	<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/mediaplayer.js"></script>
+<script src="scripts/services/mediaplayer.js"></script>
 	<!-- endbuild -->
 </body>
 </html>
